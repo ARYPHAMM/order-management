@@ -8,38 +8,69 @@
         </p>
         <table class="table table-light">
             <thead>
-                <tr class="d-md-flex d-none">
-                    <th class="col-md-1 d-flex justify-content-center">STT</th>
-                    <th class="col-md-2 d-flex justify-content-center">Mã đơn</th>
-                    <th class="col-md-3 d-flex justify-content-center">Tên khách hàng</th>
-                    <th class="col-md-2 d-flex justify-content-center">Ngày giao</th>
-                    <th class="col-md-1 d-flex justify-content-center">Trạng thái</th>
+                <tr class="d-lg-flex d-none col-lg-12">
+                    <th class="col-lg-1 d-flex justify-content-lg-center justify-content-between">STT</th>
+                    <th class="col-lg-2 d-flex justify-content-lg-center justify-content-between">Mã đơn</th>
+                    <th class="col-lg-3 d-flex justify-content-lg-center justify-content-between">Tên khách hàng</th>
+                    <th class="col-lg-2 d-flex justify-content-lg-center justify-content-between">Ngày giao</th>
+                    <th class="col-lg-1 d-flex justify-content-lg-center justify-content-between">Trạng thái</th>
 
-                    <th class="col-md-2 d-flex justify-content-center">Xem/Sửa</th>
+                    <th class="col-lg-2 d-flex justify-content-lg-center justify-content-between">Xem/Sửa</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="d-flex flex-row flex-wrap">
                 @foreach ($items as $key => $r_item)
-                <tr class="d-flex category__row">
-                    <th class="col-md-1 d-flex justify-content-center">{{$key+1}}</th>
-                    <th class="col-md-2 d-flex justify-content-center">{{
-                    $r_item->serial}}</th>
-                    <th class="col-md-3 d-flex justify-content-center">
-                        {{$r_item->customer->name}}
+                <tr class="d-flex category__row category__row--mobile col-lg-12 col-md-6 col-12">
+                    <td class="col-lg-1 col-12 justify-content-lg-center justify-content-between d-lg-flex d-none">
+                        <span>
+                        {{$key+1}}
+                    </span>
+                </th>
+                    <th class="col-lg-2 col-12 justify-content-lg-center justify-content-between d-flex">
+                    
+                     <b class="d-block d-lg-none  text-right pr-1 w-50">
+                        Mã đơn:
+                    </b>
+                   <span class="text-lg-center flex-grow-1">
+                       {{$r_item->serial}}
+                    </span>
+                    
+                
+                </th>
+                    <th class="col-lg-3 col-12 justify-content-lg-center justify-content-between d-flex">
+                        
+                        <b class="d-block d-lg-none  text-right pr-1 w-50">
+                            Khách hàng:
+                         </b>
+                        <span class="text-lg-center flex-grow-1">
+                            {{$r_item->customer->name}}
+                         </span>
+ 
                     </th>
-                    <th class="col-md-2 d-flex justify-content-center">
-                        {{
-                             date('d-m-Y',$r_item->delivery_date)
-                        }}
+                    <th class="col-lg-2 col-12 justify-content-lg-center justify-content-between d-flex">
+                        <b class="d-block d-lg-none  text-right pr-1 w-50">
+                            Ngày giao:
+                         </b>
+                        <span class="text-lg-center flex-grow-1">
+                            {{
+                                date('d-m-Y',$r_item->delivery_date)
+                           }}
+                         </span>
                     </th>
-                    <th class="col-md-1 d-flex justify-content-center">
-                        <b class="status-{{$r_item->status}}">
+                    <th class="col-lg-1 col-12 justify-content-lg-center justify-content-between d-flex">
+                        <b class="d-block d-lg-none  text-right pr-1 w-50">
+                            Trạng thái:
+                         </b>
+
+                                                <span class="text-lg-center flex-grow-1 status-{{$r_item->status}}">
+
 
                             {{__('lang.'.$r_item->status)}}
-                        </b>
+                                                 </span>
+
                     </th>
  
-                    <th class="col-md-2 d-flex justify-content-center">
+                    <th class="col-lg-2 col-12 d-flex justify-content-center">
                         <a href="{{route('order-view',['id'=>$r_item->id])}}"><i class="fas fa-image    "></i></a>
                         <div class="pl-1 pr-1">
 
@@ -60,7 +91,7 @@
         <div class="d-flex justify-content-center">
             {{ $items->links() }}
         </div>
-        <a class="btn btn-success rounded-0 shadow-none" href="{{route('product-create')}}">
+        <a class="btn btn-success rounded-0 shadow-none" href="{{route('order-create')}}">
             Thêm mới
                </a>
     </div>

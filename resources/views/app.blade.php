@@ -28,7 +28,7 @@
         <main >
            @auth
            <div class="index">
-            <div class="d-flex">
+            <div id="body" class="d-flex">
                 <div class="col--leftMain">
                    @include('layouts.menu')
                 </div>

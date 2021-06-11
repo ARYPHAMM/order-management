@@ -1,8 +1,11 @@
 <ul class="list-group menu__main">
-    <li class="list-group-item ">
+    <li class="list-group-item position-relative">
         <a href="  " class="d-block text-center menu__main--title">
             Administrator
         </a>
+        <button class="btn d-lg-none  btn-danger close__menu" onclick="$('#body').toggleClass('active')">
+<i class="fas fa-times    "></i>
+        </button>
     </li>
     @foreach (config('app.menu') as $key => $r_menu)
         <li class="list-group-item ">

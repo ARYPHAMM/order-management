@@ -12474,7 +12474,7 @@ a:hover {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
-          animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
 }
 
 .h--100vh {
@@ -12511,6 +12511,7 @@ a:hover {
 
 .col--leftMain {
   width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .col--rightMain {
@@ -12539,7 +12540,7 @@ a:hover {
   height: 25px;
   width: 25px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   border: 1px solid #ccc;
 }
@@ -12550,6 +12551,10 @@ a:hover {
 
 .category__title {
   height: 25px;
+}
+
+.list-group-item {
+  border: none;
 }
 
 .crossbar {
@@ -12610,7 +12615,7 @@ div#collapseAccount > ul > li > a {
   height: 85px;
   width: 85px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
   border: 1px solid #ccc;
@@ -12633,19 +12638,20 @@ div#collapseAccount > ul > li > a {
   height: 150px;
   width: 150px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
 .menu__main > li:first-child {
   height: 50px;
+  border-bottom: 1px solid #dedede;
 }
 
 .items__thumbnail {
   height: 100px;
   width: 100px;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .customer__popup--create {
@@ -12670,5 +12676,90 @@ div#collapseAccount > ul > li > a {
 
 .status-fail {
   color: #e3342f;
+}
+
+@media screen and (max-width: 991px) {
+  .col--leftMain {
+    position: fixed;
+    z-index: 12;
+    height: 100%;
+    left: 0;
+    right: auto;
+    top: 0;
+    transition: all 1s;
+    pointer-events: none;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  #body.active .col--leftMain {
+    left: 0;
+    pointer-events: all;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .col--rightMain {
+    width: 100%;
+  }
+
+  .menu__main {
+    height: 100%;
+    background: #fff;
+  }
+
+  .crossbar {
+    height: 35px;
+    justify-content: space-between;
+  }
+
+  .close__menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .category__row--mobile {
+    flex-direction: column;
+    border: 1px solid #dedede;
+  }
+
+  #body.active .col--rightMain {
+    pointer-events: none;
+    position: relative;
+  }
+
+  #body .col--rightMain:after {
+    content: "";
+    transition: all 1s;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: auto;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #body.active .col--rightMain:after {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  div#body.active {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .category__title {
+    height: auto;
+  }
 }
 
