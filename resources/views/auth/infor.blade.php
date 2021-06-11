@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="account__information w--100vw h--100vh justify-content-center align-items-center d-flex ">
-        <div class="d-flex w-50">
+        <div class="d-flex col-lg-6 col-12 justify-content-center">
             <div class="card text-dark w-75 ">
                 <div class="account__avatar">
                     <img class="card-img-top" src="{{asset('upload/avatar.jpg')}}" alt="">

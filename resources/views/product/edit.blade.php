@@ -1,8 +1,8 @@
 @extends('app')
 @section('content')
     <div class="container h--100vh">
-        <div class="row justify-content-center align-items-center h-100 w-100">
-            <div class="card w-75">
+        <div class="row justify-content-center align-items-center h-100 ">
+            <div class="card col-md-6 col-12 rounded-0 ">
                 <div class="card-header bg-primary text-white font-weight-bold text-uppercase">
                     {{ __('lang.' . (@$item->id != '' ? 'Update' : 'Create') . '_product') }}
                 </div>

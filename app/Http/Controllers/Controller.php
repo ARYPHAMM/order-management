@@ -14,6 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function __construct()
     {
+       
         Config::set('app.url', config('app.url').':'.$_SERVER['SERVER_PORT'] );
     }
 }

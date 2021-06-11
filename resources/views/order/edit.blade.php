@@ -2,17 +2,17 @@
 
 @section('content')
     <div class="container h--100vh">
-        <div class="row justify-content-center align-items-center h-100 w-100">
-            <form  onsubmit="return  confirm('Bạn đã kiểm tra kỹ hết chưa? đơn hàng sẽ được cập nhật!');" class="w-100" method="POST" action="{{ route('order-update') }}" enctype="multipart/form-data">
+        <div class="row justify-content-center align-items-center h-100 ">
+            <form  class="d-flex justify-content-center w-100 " onsubmit="return  confirm('Bạn đã kiểm tra kỹ hết chưa? đơn hàng sẽ được cập nhật!');" class="w-100" method="POST" action="{{ route('order-update') }}" enctype="multipart/form-data">
                @csrf
                <input type="hidden" name="id" value="{{$item->id}}">
-            <div class="card w-75">
+            <div class="card col-md-6 col-12">
                 <div class="card-header bg-primary text-white font-weight-bold text-uppercase">
                    Cập nhật đơn hàng
                 </div>
-                <div class="card-body">
+                <div class="card-bod d-flex flex-column">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-12">
                            <b>
                                Mã đơn hàng
                            </b>
@@ -23,7 +23,7 @@
                        
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-12">
                        <b>     
                             Họ tên khách hàng
                         </b>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-12">
                            <b>
                             Địa chỉ
                            </b>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-12">
                         <b>    
                           Ngày giao
                          </b>
@@ -64,14 +64,14 @@
                         <div class="col-12 ">
                           @foreach ($item->orderDetail() as $r_item)
                               <div class="order__detail--item shadow-sm mb-1">
-                                <div class="d-flex">
-                                    <div class="col-4 d-flex">
+                                <div class="d-flex flex-column">
+                                    <div class="col-md-4 col-12 d-flex">
                                         <b class="pr-3">Tên sản phẩm </b>
                                         <p>
                                             {{$r_item->product->title}}
                                         </p>
                                     </div>
-                                    <div class="col-6 d-flex">
+                                    <div class="col-md-6 col-12 d-flex">
                                         <b class="pr-1">Số lượng </b>
                                         <div class="w-auto d-block text-center">
                                             <button type="button" onclick="$(this).next('input').val(    ($(this).next('input').val()-1) == 0?1 : ($(this).next('input').val()-1)   );  " class="btn rounded-0 shadow-none">
@@ -83,7 +83,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 d-flex">
+                                    <div class="col-md-2 col-12 d-flex">
                                         <b class="pr-3">Giá </b>
                                         <p>
                                             {{number_format($r_item->price,0).'đ'}}
@@ -113,7 +113,7 @@
                     </div>
                     @if ($item->status =='cancel' || $item->status =='success')
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-12">
 <b>
                           Trạng thái đơn hàng
                            </b>
