@@ -1,0 +1,173 @@
+// Fonts and Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+@import '~jquery-ui/themes/base/all.css';
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.login--bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+.h--100vh {
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.col--leftMain {
+    width: 250px;
+}
+.col--rightMain {
+    width: calc(100% - 250px);
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+}
+.menu__main li {
+    border-radius: 0 !important;
+}
+
+.menu__main .list-group-item.active a {
+    color: #fff;
+}
+
+.menu__main .list-group-item a {
+    color: #333;
+}
+.menu__main--title {
+    font-weight: 700;
+    font-size: 120%;
+}
+.userCurrent img {
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.userCurrent b {
+    font-size: 11px;
+}
+.category__title {
+    height: 25px;
+}
+.userCurrent img {
+}
+
+.crossbar {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #dede;
+    height: 25px;
+    padding-right: 10px;
+}
+#collapseAccount {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+}
+.userCurrent {
+    width: 150px;
+}
+
+div#collapseAccount > ul {
+    padding: 5px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+div#collapseAccount > ul > li > a {
+    text-align: right;
+    display: block;
+	color:#333;
+}
+.home__wrapper {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    filter: drop-shadow(2px 4px 2px black);
+}
+#collapseAccount {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+.w--100vw{
+    width: 100vw;
+}
+.account__avatar img {
+    height: 85px;
+    width: 85px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+.account__avatar {
+    margin: 5px;
+}
+.account__attribute {
+    padding: 5px 10px;
+}
+.list-group-child{
+    margin-left:5px;
+}
+.item__thumbnail {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    display: block;
+}
+.menu__main > li:first-child {
+    height: 50px;
+}
+.items__thumbnail{
+    height: 100px;
+    width: 100px;
+    object-fit: fill;
+}
+.customer__popup--create {
+    position: absolute;
+    z-index: 11;
+    background-color: #fff;
+    width: auto;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+.status-success{
+    color:$green;
+}
+.status-wait{
+    color:rgb(206, 206, 106);
+}
+.status-cancel{
+    color:$orange;
+}
+.status-fail{
+    color:$red;
+}
