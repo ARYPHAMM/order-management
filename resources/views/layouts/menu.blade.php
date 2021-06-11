@@ -15,7 +15,7 @@
                 <a   class="d-flex justify-content-between align-items-center" href="javascript:void(0)"
                     data-toggle="collapse" data-target="#{{ $key }}" aria-expanded=" {{@(session()->get('remember_menu'))== $key ? 'true' : 'false'}}"
                     aria-controls="{{ $key }}"> {{ $r_menu['title'] }}
-                    <i class="fas fa-chevron-down    "></i>
+                    <i class="fas fa-chevron-down   1 "></i>
                 </a>
               
                 @if (is_array($r_menu['list-con']) && !empty($r_menu['list-con']))
